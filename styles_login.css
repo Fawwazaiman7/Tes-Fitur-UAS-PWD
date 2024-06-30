@@ -1,12 +1,6 @@
 * {
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('Images/background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
 }
 
 body {
@@ -14,25 +8,70 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 100px; /* Ensure content doesn't overlap the navbar */
+    background-image: url("Images/komodo gelud.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100%; /* Make sure body takes full height */
 }
 
 .navbar {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    position: relative;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+header {
+    color: rgb(233, 236, 244);
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 50px;
+    background-color: #343a40;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
 }
 
 .wrapper {
-    width: 420px;
+    width: 400px;
+    position: relative;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
-    margin-top: -50px; /* Centering adjustment */
+    margin-top: 180px; /* Centering adjustment */
+    margin-bottom: 200px;
 }
 
 .wrapper h1 {
@@ -96,6 +135,36 @@ body {
     background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
     padding: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #292f30;
+    color: #c1c8c8 ;
+    padding: 10px ;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    position: relative;
     margin-top: 30px;
-    margin-bottom: 30px;
+    bottom: 0;
+    left: 0;
+}
+
+footer h5 {
+    color: #15a68e;
+}
+
+footer a {
+    color: #15a68e;
+}
+
+footer a:hover {
+    color: #004d40;
+}
+
+.footer-text {
+    color: whitesmoke;
+    font-size: 0.9rem;
+    margin: 20px 0;
 }
