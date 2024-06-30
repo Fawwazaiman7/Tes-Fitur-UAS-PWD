@@ -22,7 +22,7 @@ body {
 .navbar {
     width: 100%;
     position: relative;
-    padding: 10px;
+    padding: 30px;
 }
 
 .navbar-brand {
@@ -30,38 +30,6 @@ body {
     font-size: 1.5rem;
 }
 
-header {
-    color: rgb(233, 236, 244);
-    text-align: center;
-    padding: 50px 0;
-    margin-bottom: 50px;
-    background-color: #343a40;
-}
-
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
 
 .wrapper {
     width: 400px;
@@ -131,11 +99,7 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 10px;
-    padding: 20px;
-}
+
 
 /* Footer styles */
 footer {
@@ -167,4 +131,14 @@ footer a:hover {
     color: whitesmoke;
     font-size: 0.9rem;
     margin: 20px 0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #15a68e;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #004d40;
 }

@@ -1,31 +1,23 @@
-/* Animasi fade-in untuk pesan tamu baru */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+* {
+    font-family: Arial, sans-serif;
 }
 
-.card {
-    animation: fadeIn 1s;
-}
-
-/* Efek hover untuk gambar galeri */
-.gallery-img {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Umum */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 100px;
 }
 
 .navbar-brand {
@@ -33,153 +25,109 @@ body {
     font-size: 1.5rem;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #ffc1cc; /* Warna pastel */
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #ffc107; /* Warna pastel */
-}
-
-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header-bg.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
-}
-
-header::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Efek gelap transparan */
-}
-
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+.tes {
+    width: 50%;
+    padding: 50px;
+    margin: 0 auto; /* Center the form horizontally */
 }
 
 main {
-    padding-top: 20px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #fff; /* Background color for the form container */
+    border-radius: 15px; /* Rounded corners for the form container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Initial shadow for the form container */
+    border: 5px solid transparent; /* Initial border for gradient effect */
+    background-clip: padding-box; /* For gradient border effect */
+    position: relative; /* For gradient border effect */
+    transition: box-shadow 0.3s ease-in-out; /* Transition for box-shadow */
 }
 
-footer {
-    background-color: #b0e0e6; /* Warna pastel */
-    color: #fff;
-    padding: 30px 0;
+main:hover {
+    box-shadow: 0px 0 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
 }
 
-footer a {
-    color: #ffc107;
+
+
+h2 {
+    font-size: 2.5rem;
+    color: #040303;
+    margin-bottom: 30px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
 }
 
-footer a:hover {
-    color: #fff;
-}
-
-/* Animasi untuk fade-in pada section utama */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+@keyframes fadeInUp {
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.promo-item img {
-    animation: fadeIn 2s;
+
+
+.form-control {
+    border-radius: 20px;
 }
 
-/* Hover effect untuk promo items */
-.promo-item img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
+.btn-primary {
+    background-color: #00796b;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f7; /* Warna background pastel */
+.btn-primary:hover {
+    background-color: #005c4f;
 }
 
-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header-bg.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
+.card {
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    padding: auto;
 }
 
-header::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Efek gelap transparan */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
 
-.promo-item {
-    background-color: #ffffff; /* Warna latar belakang putih */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-    transition: transform 0.3s ease;
-    margin: 20px 0; /* Spasi antara promo item */
-}
-
-.promo-item:hover {
-    transform: translateY(-5px); /* Efek hover */
-}
-
-/* Tambahan warna pastel */
-.container {
-    background-color: #7779f9; /* Warna pastel */
-    padding: 20px;
-    border-radius: 10px;
-}
-
+/* Footer styles */
 footer {
-    background-color: #afeeee; /* Warna pastel */
-    color: #006064;
-    padding: 30px 0;
+    background-color: #292f30;
+    color: #c1c8c8 ;
+    padding: 50px 0;
+    margin-top: 10%;
+    text-align: center;
+    z-index: 1;
 }
 
 footer h5 {
-    color: #004d40;
+    color: #15a68e;
 }
 
 footer a {
-    color: #00796b;
+    color: #15a68e;
 }
 
 footer a:hover {
     color: #004d40;
+}
+
+.footer-text {
+    color: whitesmoke;
+    font-size: 0.9rem;
+    margin: 20px 0;
 }
 
 .footer-social a {
     margin: 0 10px;
-    color: #00796b;
+    color: #15a68e;
     transition: color 0.3s;
 }
 
