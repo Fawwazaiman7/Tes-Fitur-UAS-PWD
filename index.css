@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    position: relative;
+    top: 0;
+    height: 100px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #2F80ED, #56CCF2);
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 50px; /* Jarak antara header dan main content */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Main Content Styles */
+main {
+    padding-top: 20px;
+    margin-bottom: 50px; /* Jarak antara main content dan footer */
+}
+
+/* Promo Item Styles */
+.promo-item {
+    color: #333;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.promo-item img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.promo-item p {
+    padding: 15px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Title Styles */
+h2 {
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin-bottom: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .promo-item img {
+        height: auto;
+    }
+}
+
+/* Container Styles */
+.content-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px; /* Jarak antara header dengan kontainer utama */
+    margin-bottom: 30px; /* Jarak antara footer dengan kontainer utama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

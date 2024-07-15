@@ -1,87 +1,75 @@
-// Function to close the modal
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('orderForm');
+    const packagePriceInput = document.getElementById('packagePrice');
+    const totalBillInput = document.getElementById('totalBill');
 
-function validateForm() {
-    const name = document.getElementById('name').value;
-    const tripDuration = document.getElementById('tripDuration').value;
-    const participantCount = document.getElementById('participantCount').value;
-    const serviceType = document.getElementById('serviceType').value;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    if (!name || !tripDuration || !participantCount || !serviceType) {
-        document.getElementById('formMessage').innerText = "Harap lengkapi semua kolom pada form pemesanan.";
-        return false;
-    }
+        // Ambil nilai dari form
+        const name = form.name.value;
+        const phone = form.phone.value;
+        const tripDate = form.tripDate.value;
+        const participantCount = form.participantCount.value;
+        const services = Array.from(form.service).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        const packagePrice = parseFloat(packagePriceInput.value.replace(/[^0-9]/g, '')) || 0;
+        const totalBill = participantCount * packagePrice;
 
-    const hargaPaket = document.getElementById('packagePrice').value.replace(/[^0-9]/g, '');
-    const jumlahTagihan = document.getElementById('totalBill').value.replace(/[^0-9]/g, '');
+        // Kirim data ke tampilan_pemesanan.html
+        const queryParams = new URLSearchParams({
+            nama: name,
+            jumlahPeserta: participantCount,
+            waktuPerjalanan: tripDate,
+            serviceType: services.join(', ') || 'Tidak ada',
+            hargaPaket: packagePrice.toLocaleString(),
+            jumlahTagihan: totalBill.toLocaleString()
+        }).toString();
 
-    // Build the modal content
-    const modalContent = `
-        <div class="reservation-summary">
-            <div id="header" class="header">
-                RANGKUMAN RESERVASI PAKET WISATA
-            </div>
-            <div id="content" class="content">
-                <div><span>Nama</span>: ${name}</div>
-                <div><span>Jumlah Peserta</span>: ${participantCount}</div>
-                <div><span>Waktu Perjalanan</span>: ${tripDuration}</div>
-                <div><span>Jenis Layanan</span>: ${serviceType}</div>
-                <div><span>Harga Paket</span>: Rp ${parseInt(hargaPaket).toLocaleString('id-ID')},00</div>
-                <div><span>Jumlah Tagihan</span>: Rp ${parseInt(jumlahTagihan).toLocaleString('id-ID')},00</div>
-            </div>
-        </div>
-    `;
+        window.location.href = `tampilan_pemesanan.html?${queryParams}`;
 
-    document.getElementById('modalBody').innerHTML = modalContent;
-
-    // Display the modal
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-
-    return false; // Prevent actual form submission
-}
-
-function calculatePackagePrice() {
-    const serviceType = document.getElementById('serviceType').value;
-    let price;
-
-    switch(serviceType) {
-        case 'penginapan':
-            price = 500000;
-            break;
-        case 'transportasi':
-            price = 300000;
-            break;
-        case 'makanan':
-            price = 200000;
-            break;
-        default:
-            price = 0;
-    }
-
-    calculateTotalBill(price)
-    document.getElementById('packagePrice').value = price.toLocaleString('id-ID');
-}
-
-function calculateTotalBill(serviceTypePrice) {
-    const tripDuration = document.getElementById('tripDuration').value;
-    const participantCount = document.getElementById('participantCount').value;
-    
-    let totalBill = serviceTypePrice * tripDuration * participantCount;
-    document.getElementById('totalBill').value = totalBill.toLocaleString('id-ID');
-}
-
-function validateNameInput() {
-    const nameField = document.getElementById('name');
-    nameField.addEventListener('input', function() {
-        this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        // Tampilkan pesan
+        document.getElementById('formMessage').textContent = 'Silakan lihat rangkuman reservasi Anda di halaman berikutnya.';
     });
-}
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Call the function to validate name input
-    validateNameInput();
+    // Menutup modal
+    window.closeModal = function () {
+        document.getElementById('myModal').style.display = 'none';
+        document.getElementById('formMessage').textContent = '';
+        form.reset();
+    }
+
+    // Fungsi untuk mengatur harga paket berdasarkan pelayanan yang dipilih
+    form.addEventListener('change', function () {
+        const services = Array.from(form.service).filter(checkbox => checkbox.checked);
+        let price = 0;
+
+        services.forEach(service => {
+            switch (service.value) {
+                case 'Penginapan':
+                    price += 200000; // Contoh harga untuk penginapan
+                    break;
+                case 'Transportasi':
+                    price += 150000; // Contoh harga untuk transportasi
+                    break;
+                case 'Makanan':
+                    price += 50000; // Contoh harga untuk makanan
+                    break;
+            }
+        });
+
+        packagePriceInput.value = price.toLocaleString();
+        totalBillInput.value = (price * (form.participantCount.value || 0)).toLocaleString();
+    });
+
+    // Menampilkan modal dengan pesan
+    document.getElementById('pesan-lagi').addEventListener('click', () => {
+        window.location.href = 'pemesanan.html';
+    });
+
+    // Menutup modal jika diklik di luar konten modal
+    window.onclick = function (event) {
+        if (event.target == document.getElementById('myModal')) {
+            closeModal();
+        }
+    }
 });

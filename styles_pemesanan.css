@@ -10,6 +10,11 @@ body {
     color: #333;
 }
 
+h2{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
 .navbar {
     position: relative;
     top: 0;
@@ -28,7 +33,7 @@ main {
 }
 
 form {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(251, 241, 241, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -109,48 +114,85 @@ footer a:hover {
 
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
+    display: none;
+    position:fixed;  
+    align-items: center;
+    justify-content: center;
     width: 100%; 
     height: 100%; 
-    overflow: auto; 
+    overflow: hidden; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+    background: rgba(0, 0, 0, 0.5); /* Background overlay */
     padding-top: 60px;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; 
+    background: #ffffff;
+    border-radius: 18px; /* Sesuaikan dengan header */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
     padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px; 
-    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    flex-direction: column;
+    margin: auto;
 }
 
 .reservation-summary {
     width: 100%;
     background: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
     overflow: hidden;
+    padding-bottom: 30px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
-
+.header {
+    background: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Menghilangkan margin */
+    position: relative; /* Untuk memastikan tidak ada overlapping */
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
 .content {
     padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
     color: #333;
 }
+
+
+.label {
+    display: inline-block;
+    width: 150px; /* Adjust this width as needed */
+    /* font-weight: bold; */
+    color: #333;
+}
+
+.content div span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 
 .content div {
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
     font-size: 1.1em;
 }
 
@@ -158,7 +200,6 @@ footer a:hover {
     display: flex;
     justify-content: space-around;
     padding: 15px;
-    background-color: #f5f5f5;
 }
 
 .footer-buttons button {
@@ -175,13 +216,13 @@ footer a:hover {
     color: white;
 }
 
-.footer-buttons .yes:hover {
-    background-color: #3a7db8;
-}
 
 .footer-buttons .no {
     background-color: #e94e77;
     color: white;
+}
+.footer-buttons .yes:hover {
+    background-color: #3a7db8;
 }
 
 .footer-buttons .no:hover {
