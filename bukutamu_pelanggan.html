@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu - Liburan Pulau Komodo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="Backend.html">Liburan Pulau Komodo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#paketWisata">Paket Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="galeri_pelanggan.html">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bukutamu_pelanggan.html">Buku Tamu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pemesanan_pelanggan.html">Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Log-in</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tes mt-5">
+        <section>
+            <h2 class="text-center">Buku Tamu</h2>
+            <form id="bukuTamuForm">
+                <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input type="text" class="form-control" id="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Pesan:</label>
+                    <textarea class="form-control" id="pesan" rows="4" required></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+            <div id="guestBookMessages" class="mt-5">
+                <div id="messagesContainer">
+                    
+                    <!-- Tambahkan lebih banyak pesan sesuai kebutuhan -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tentang Kami</h5>
+                    <p>Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk destinasi wisata Pulau Komodo dan sekitarnya.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontak</h5>
+                    <p>Email: info@pulaukomodo.com</p>
+                    <p>Telepon: +62 812 3456 7890</p>
+                </div>
+                <div class="col-md-4 footer-social">
+                    <h5>Ikuti Kami</h5>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="animasi-buku-tamu.js"></script>
+</body>
+</html>
