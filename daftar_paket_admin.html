@@ -7,9 +7,8 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="daftar_paket.css">
+    <link rel="stylesheet" href="daftar_paket_admin.css">
     <style>
-        /* Temporary styles for debugging */
         .paket {
             border: 1px solid red;
             padding: 20px;
@@ -52,22 +51,8 @@
         <section>
             <h2 class="text-center">Daftar Paket Wisata</h2>
             
-            <div id="paket-container">
-                <div class="paket">
-                    <img src="Images/paket-wisata-sailing-komodo-1-harian.jpg" class="img-fluid" alt="Paket Wisata 1">
-                    <h3>Paket Wisata 1</h3>
-                    <p>Deskripsi paket wisata 1.</p>
-                    <a href="https://www.youtube.com/watch?v=videoid" target="_blank">Lihat video promosi</a>
-                </div>
-
-                <div class="paket">
-                    <img src="Images/Paket-Wisata-Sailing-Komodo-2-hari-1-malam.jpg" class="img-fluid" alt="Paket Wisata 2">
-                    <h3>Paket Wisata 2</h3>
-                    <p>Deskripsi paket wisata 2.</p>
-                    <a href="https://www.youtube.com/watch?v=videoid" target="_blank">Lihat video promosi</a>
-                </div>
-
-                <!-- Additional packages will be added here -->
+            <div id="paket-container-admin">
+                <!-- Packages will be loaded here from local storage -->
             </div>
             
             <h2 class="text-center mt-5">Tambah Paket Wisata Baru</h2>
@@ -119,34 +104,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script>
-        document.getElementById('addPaketButton').addEventListener('click', function() {
-            const title = document.getElementById('paketTitle').value;
-            const description = document.getElementById('paketDesc').value;
-            const imgUrl = document.getElementById('paketImg').value;
-            const videoUrl = document.getElementById('paketVideo').value;
-
-            if (title && description && imgUrl && videoUrl) {
-                const paketContainer = document.getElementById('paket-container');
-
-                const newPaket = document.createElement('div');
-                newPaket.classList.add('paket');
-
-                newPaket.innerHTML = `
-                    <img src="${imgUrl}" class="img-fluid" alt="${title}">
-                    <h3>${title}</h3>
-                    <p>${description}</p>
-                    <a href="${videoUrl}" target="_blank">Lihat video promosi</a>
-                `;
-
-                paketContainer.appendChild(newPaket);
-
-                // Clear form inputs
-                document.getElementById('addPaketForm').reset();
-            } else {
-                alert('Please fill out all fields.');
-            }
-        });
-    </script>
+    <script src="daftar_paket_admin.js"></script>
 </body>
 </html>
