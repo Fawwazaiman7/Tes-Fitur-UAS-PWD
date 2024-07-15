@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rangkuman Reservasi</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_tampilan_pemesanan.css">
 </head>
 <body>
-    <div class="reservation-summary container">
+    <div class="reservation-summary">
         <div id="header" class="header">
             RANGKUMAN RESERVASI PAKET WISATA
         </div>
@@ -21,17 +19,12 @@
             <div id="harga-paket"><span>Harga Paket</span>: <span id="popupHargaPaket"></span></div>
             <div id="jumlah-tagihan"><span>Jumlah Tagihan</span>: <span id="popupJumlahTagihan"></span></div>
         </div>
-        <div id="footer" class="footer text-center mt-4">
-            <button id="pesan-lagi" class="btn btn-success" onclick="window.location.href='pemesanan.html';">Pesan Lagi</button>
-            <button id="tidak" class="btn btn-secondary" onclick="window.location.href='index.html';">Tidak</button>
+        <div id="footer" class="footer">
+            <button id="pesan-lagi" class="yes" onclick="window.parent.postMessage({ action: 'closeModal' }, '*');">Pesan Lagi</button>
+            <button id="tidak" class="no" onclick="window.parent.postMessage({ action: 'closeModal' }, '*');">Tidak</button>
         </div>
     </div>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
     <script>
         // Ambil data dari URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -39,8 +32,11 @@
         document.getElementById('popupJumlahPeserta').innerText = urlParams.get('jumlahPeserta');
         document.getElementById('popupWaktuPerjalanan').innerText = urlParams.get('waktuPerjalanan');
         document.getElementById('popupServiceType').innerText = urlParams.get('serviceType');
-        document.getElementById('popupHargaPaket').innerText = `Rp${urlParams.get('hargaPaket')}`;
-        document.getElementById('popupJumlahTagihan').innerText = `Rp${urlParams.get('jumlahTagihan')}`;
+        document.getElementById('popupHargaPaket').innerText = urlParams.get('hargaPaket');
+        document.getElementById('popupJumlahTagihan').innerText = urlParams.get('jumlahTagihan');
+
+        // Send message to parent with the height of the content
+        window.parent.postMessage({ height: document.body.scrollHeight }, '*');
     </script>
 </body>
 </html>
