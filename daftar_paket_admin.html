@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Paket Wisata</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="daftar_paket_admin.css">
+    <style>
+        .paket {
+            border: 1px solid red;
+            padding: 20px;
+            margin-bottom: 20px;
+            opacity: 1; /* Ensure they are visible */
+            transform: translateY(0); /* Ensure they are positioned correctly */
+        }
+
+        .logout-link {
+            padding: 5px 10px;
+            border: 2px solid red;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Website Pulau Komodo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Backend.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="daftar_paket_admin.html">Edit Paket Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri_admin.html">Edit Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_pemesanan.html">List Daftar Pemesanan</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link logout-link" href="index.html">Log-out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <main class="container">
+        <section>
+            <h2 class="text-center">Daftar Paket Wisata</h2>
+            
+            <div id="paket-container-admin">
+                <!-- Packages will be loaded here from local storage -->
+            </div>
+            
+            <h2 class="text-center mt-5">Tambah Paket Wisata Baru</h2>
+            <form id="addPaketForm" class="text-center mt-3">
+                <div class="form-group">
+                    <input type="text" id="paketTitle" class="form-control" placeholder="Judul Paket">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="paketDesc" class="form-control" placeholder="Deskripsi Paket">
+                </div>
+                <div class="form-group">
+                    <label for="paketImgUrl">URL Gambar</label>
+                    <input type="text" id="paketImgUrl" class="form-control" placeholder="URL Gambar">
+                </div>
+                <div class="form-group">
+                    <label for="paketImgFile">Pilih Gambar</label>
+                    <input type="file" id="paketImgFile" class="form-control-file" accept="image/png, image/jpeg">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="paketVideo" class="form-control" placeholder="URL Video Promosi">
+                </div>
+                <div id="errorMessage" class="text-danger"></div>
+                <button type="button" id="addPaketButton" class="btn btn-primary">Tambah Paket</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tentang Kami</h5>
+                    <p>Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk destinasi wisata Pulau Komodo dan sekitarnya.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontak</h5>
+                    <p>Email: info@pulaukomodo.com</p>
+                    <p>Telepon: +62 812 3456 7890</p>
+                </div>
+                <div class="col-md-4 footer-social">
+                    <h5>Ikuti Kami</h5>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="daftar_paket_admin.js"></script>
+</body>
+</html>
