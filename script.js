@@ -15,24 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const packagePrice = parseFloat(packagePriceInput.value.replace(/[^0-9]/g, '')) || 0;
         const totalBill = participantCount * packagePrice;
 
-        // Prepare the data object
-        const orderData = {
-            name,
-            phone,
-            tripDate,
-            participantCount,
-            services: services.join(', ') || 'Tidak ada',
-            packagePrice: packagePrice.toLocaleString(),
-            totalBill: totalBill.toLocaleString()
-        };
-
-        // Save the data to localStorage
-        let orders = JSON.parse(localStorage.getItem('orders')) || [];
-        orders.push(orderData);
-        localStorage.setItem('orders', JSON.stringify(orders));
-
         // Kirim data ke tampilan_pemesanan.html
-        const queryParams = new URLSearchParams(orderData).toString();
+        const queryParams = new URLSearchParams({
+            nama: name,
+            jumlahPeserta: participantCount,
+            waktuPerjalanan: tripDate,
+            serviceType: services.join(', ') || 'Tidak ada',
+            hargaPaket: packagePrice.toLocaleString(),
+            jumlahTagihan: totalBill.toLocaleString()
+        }).toString();
+
         window.location.href = `tampilan_pemesanan.html?${queryParams}`;
 
         // Tampilkan pesan

@@ -1,102 +1,220 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Pemesanan</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles_pemesanan.css">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles_pemesanan.css" />
     <style>
-        .order-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .logout-link {
-            padding: 5px 10px;
-            border: 2px solid red;
-            border-radius: 5px;
-        }
-
+      .order-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Website Pulau Komodo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Backend.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="daftar_paket_admin.html">Edit Paket Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri_admin.html">Edit Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_pemesanan.html">List Daftar Pemesanan</a>
-                    </li>
-                    <li class="nav-item activve">
-                        <a class="nav-link logout-link" href="index.html">Log-out</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Liburan Pulau Komodo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Backend.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="daftar_paket_admin.html"
+                >Edit Paket Wisata</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeri_admin.html">Edit Galeri</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin_pemesanan.html"
+                >List Daftar Pemesanan</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Log-out</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    
 
     <main class="container mt-5">
-        <div class="order-container">
-            <h2>Daftar Pemesanan</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nama Pemesan</th>
-                        <th>Telepon</th>
-                        <th>Waktu Perjalanan</th>
-                        <th>Jumlah Peserta</th>
-                        <th>Layanan</th>
-                        <th>Harga Paket (Rp)</th>
-                        <th>Jumlah Tagihan (Rp)</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="orderTableBody">
-                    <!-- Data akan diisi di sini -->
-                </tbody>
-            </table>
-        </div>
+      <div class="order-container">
+        <h2>Daftar Pemesanan</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nama Pemesan</th>
+              <th>Telepon</th>
+              <th>Waktu Perjalanan</th>
+              <th>Jumlah Peserta</th>
+              <th>Layanan</th>
+              <th>Harga Paket (Rp)</th>
+              <th>Jumlah Tagihan (Rp)</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="orderTableBody">
+            <!-- Data akan diisi di sini -->
+            <td>Udin</td>
+            <td>08999</td>
+            <td>17 hari</td>
+            <td>10</td>
+            <td>Transportasi</td>
+            <td>RP 30.000</td>
+            <td>RP 180.000</td>
+          </tbody>
+          <tbody>
+            <!-- Data akan diisi di sini -->
+            <td>Udin</td>
+            <td>08999</td>
+            <td>17 hari</td>
+            <td>10</td>
+            <td>Transportasi</td>
+            <td>RP 30.000</td>
+            <td>RP 180.000</td>
+          </tbody>
+
+          <tbody>
+            <td>Silvi</td>
+            <td>09777</td>
+            <td>70 hari</td>
+            <td>1</td>
+            <td>Transportasi</td>
+            <td>RP 200.000</td>
+            <td>RP 200.000</td>
+          </tbody>
+          <tbody>
+            <td>Rasyid</td>
+            <td>021111</td>
+            <td>1</td>
+            <td>Transportasi</td>
+            <td>RP 30.000</td>
+            <td>RP 30.000</td>
+            <td>RP 30.000</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+          <tbody>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tbody>
+        </table>
+      </div>
     </main>
 
     <footer class="text-center mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Tentang Kami</h5>
-                    <p>Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk destinasi wisata Pulau Komodo dan sekitarnya.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Kontak</h5>
-                    <p>Email: info@pulaukomodo.com</p>
-                    <p>Telepon: +62 812 3456 7890</p>
-                </div>
-                <div class="col-md-4 footer-social">
-                    <h5>Ikuti Kami</h5>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
-            <hr>
-            <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tentang Kami</h5>
+            <p>
+              Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk
+              destinasi wisata Pulau Komodo dan sekitarnya.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Kontak</h5>
+            <p>Email: info@pulaukomodo.com</p>
+            <p>Telepon: +62 812 3456 7890</p>
+          </div>
+          <div class="col-md-4 footer-social">
+            <h5>Ikuti Kami</h5>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
         </div>
+        <hr />
+        <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
@@ -106,21 +224,21 @@
 
     <!-- Custom Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const orderTableBody = document.getElementById('orderTableBody');
-            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      document.addEventListener("DOMContentLoaded", function () {
+        const orderTableBody = document.getElementById("orderTableBody");
+        const orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-            function deleteOrder(index) {
-                orders.splice(index, 1);
-                localStorage.setItem('orders', JSON.stringify(orders));
-                renderOrders();
-            }
+        function deleteOrder(index) {
+          orders.splice(index, 1);
+          localStorage.setItem("orders", JSON.stringify(orders));
+          renderOrders();
+        }
 
-            function renderOrders() {
-                orderTableBody.innerHTML = '';
-                orders.forEach((order, index) => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
+        function renderOrders() {
+          orderTableBody.innerHTML = "";
+          orders.forEach((order, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
                         <td>${order.name}</td>
                         <td>${order.phone}</td>
                         <td>${order.tripDate}</td>
@@ -130,14 +248,14 @@
                         <td>${order.totalBill}</td>
                         <td><button class="btn btn-danger btn-sm" onclick="deleteOrder(${index})">Delete</button></td>
                     `;
-                    orderTableBody.appendChild(row);
-                });
-            }
+            orderTableBody.appendChild(row);
+          });
+        }
 
-            renderOrders();
+        renderOrders();
 
-            window.deleteOrder = deleteOrder;
-        });
+        window.deleteOrder = deleteOrder;
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Tamu - Liburan Pulau Komodo</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_buku_tamu.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,10 +39,10 @@
         </div>
     </nav>
 
-    <main class="tes mt-5">
-        <section>
+    <main class="container mt-5">
+        <section class="guest-book-section">
             <h2 class="text-center">Buku Tamu</h2>
-            <form id="bukuTamuForm">
+            <form id="bukuTamuForm" class="guest-book-form">
                 <div class="form-group">
                     <label for="nama">Nama:</label>
                     <input type="text" class="form-control" id="nama" required>
@@ -55,15 +55,10 @@
                     <label for="pesan">Pesan:</label>
                     <textarea class="form-control" id="pesan" rows="4" required></textarea>
                 </div>
-                <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
+                <button type="submit" class="btn btn-primary float-right">Kirim</button>
             </form>
             <div id="guestBookMessages" class="mt-5">
-                <div id="messagesContainer">
-                    
-                    <!-- Tambahkan lebih banyak pesan sesuai kebutuhan -->
-                </div>
+                <div id="messagesContainer"></div>
             </div>
         </section>
     </main>
