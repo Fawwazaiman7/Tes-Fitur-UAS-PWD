@@ -6,161 +6,10 @@
     <title>Liburan Pulau Komodo</title>
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="style-index.css">
 
-    <!-- Custom styles -->
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-      @keyframes slideIn {
-        from {
-          transform: translateX(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-image: url("Images/background.jpeg"); /* Ganti dengan path gambar Anda */
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Background tetap pada posisinya saat di-scroll */
-      }
-
-      .navbar {
-        position: relative;
-        height: 100px;
-      }
-
-      .navbar-brand {
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-
-      header {
-        color: rgb(233, 236, 244);
-        text-align: center;
-        padding: 100px 0;
-        margin-bottom: 50px; /* Jarak antara header dan main content */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      header h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        font-family: 'Lobster', cursive;
-        animation: fadeIn 2s ease-in-out;
-      }
-
-      header p {
-        font-size: 1.2rem;
-        margin-top: 10px;
-        animation: fadeIn 2s ease-in-out;
-        animation-delay: 1s;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      main {
-        padding-top: 20px;
-        margin-bottom: 50px; /* Jarak antara main content dan footer */
-      }
-
-      .promo-item {
-        color: white;
-        width: 300px;
-        background: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 10px;
-        flex: 1;
-        animation: slideIn 0.5s ease-out;
-      }
-
-      .promo-item img {
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.2s ease-in-out;
-      }
-
-      .promo-item img:hover {
-        transform: scale(1.1);
-      }
-
-      .promo-item p {
-        color: white; /* Mengubah warna tulisan menjadi putih */
-      }
-
-      h2 {
-        color: white; /* Mengubah warna tulisan menjadi putih */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      footer {
-        background-color: #292f30;
-        color: #c1c8c8;
-        padding: 30px 0;
-        margin-top: 50px; /* Jarak antara main content dan footer */
-      }
-
-      footer h5 {
-        color: #15a68e;
-      }
-
-      footer a {
-        color: #00796b;
-      }
-
-      footer a:hover {
-        color: #004d40;
-      }
-
-      .footer-social a {
-        margin: 0 10px;
-        color: #0da795;
-        transition: color 0.3s;
-      }
-
-      .footer-social a:hover {
-        color: #004d40;
-      }
-
-      .container {
-        background-color: rgba(
-          191,
-          6,
-          6,
-          0
-        ); /* Warna background putih transparan */
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 30px; /* Jarak antara header dengan kontainer utama */
-        margin-bottom: 30px; /* Jarak antara footer dengan kontainer utama */
-      }
-
-      .promo-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -179,9 +28,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Beranda</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="daftar_paket.html">Paket Wisata</a>
             </li>

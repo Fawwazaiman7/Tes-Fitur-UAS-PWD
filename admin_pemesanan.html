@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Pemesanan</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles_pemesanan.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles_pemesanan.css">
     <style>
+        .order-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-link {
+            padding: 5px 10px;
+            border: 2px solid red;
+            border-radius: 5px;
+        }
+
         .order-container {
             background-color: white;
             padding: 20px;
@@ -49,7 +67,36 @@
                 </ul>
             </div>
         </div>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Website Pulau Komodo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Backend.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="daftar_paket_admin.html">Edit Paket Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri_admin.html">Edit Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_pemesanan.html">List Daftar Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout-link" href="index.html">Log-out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+    
     
 
     <main class="container mt-5">
@@ -94,6 +141,28 @@
                     <a href="#" class="text-white">Twitter</a>
                 </div>
             </div>
+    <footer class="bg-dark text-white text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Tentang Kami</h5>
+                    <p>Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk destinasi wisata Pulau Komodo dan sekitarnya.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Kontak</h5>
+                    <p>Email: info@pulaukomodo.com</p>
+                    <p>Telepon: +62 812 3456 7890</p>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Ikuti Kami</h5>
+                    <a href="#" class="text-white">Facebook</a> <br>
+                    <a href="#" class="text-white">Instagram</a> <br>
+                    <a href="#" class="text-white">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-dark">
+            &copy; 2024 Liburan Pulau Komodo. All rights reserved.
         </div>
         <div class="text-center p-3 bg-dark">
             &copy; 2024 Liburan Pulau Komodo. All rights reserved.
@@ -110,13 +179,26 @@
         document.addEventListener('DOMContentLoaded', function () {
             const orderTableBody = document.getElementById('orderTableBody');
             const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        document.addEventListener('DOMContentLoaded', function () {
+            const orderTableBody = document.getElementById('orderTableBody');
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
 
             function deleteOrder(index) {
                 orders.splice(index, 1);
                 localStorage.setItem('orders', JSON.stringify(orders));
                 renderOrders();
             }
+            function deleteOrder(index) {
+                orders.splice(index, 1);
+                localStorage.setItem('orders', JSON.stringify(orders));
+                renderOrders();
+            }
 
+            function renderOrders() {
+                orderTableBody.innerHTML = '';
+                orders.forEach((order, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
             function renderOrders() {
                 orderTableBody.innerHTML = '';
                 orders.forEach((order, index) => {
@@ -134,11 +216,18 @@
                     orderTableBody.appendChild(row);
                 });
             }
+                    orderTableBody.appendChild(row);
+                });
+            }
 
+            renderOrders();
             renderOrders();
 
             window.deleteOrder = deleteOrder;
         });
+            window.deleteOrder = deleteOrder;
+        });
     </script>
+</body>
 </body>
 </html>
