@@ -1,0 +1,126 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+    background-image: url("Images/komodo ganteng.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+main {
+    margin-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.guest-book-section {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: auto;
+    width: 60%;
+    backdrop-filter: blur(10px); /* Blurring background content */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #040303;
+    margin-bottom: 30px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-control {
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #00796b;
+    border: none;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #005c4f;
+}
+
+.card {
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+footer {
+    background-color: #292f30;
+    color: #c1c8c8 ;
+    padding: 50px 0;
+    text-align: center;
+    z-index: 1;
+}
+
+footer h5 {
+    color: #15a68e;
+}
+
+footer a {
+    color: #15a68e;
+}
+
+footer a:hover {
+    color: #004d40;
+}
+
+.footer-text {
+    color: whitesmoke;
+    font-size: 0.9rem;
+    margin: 20px 0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #15a68e;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #004d40;
+}
