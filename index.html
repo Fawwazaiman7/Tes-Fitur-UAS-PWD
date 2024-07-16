@@ -1,202 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liburan Pulau Komodo</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Custom styles -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('Images/background.jpeg'); /* Ganti dengan path gambar Anda */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Background tetap pada posisinya saat di-scroll */
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-        .navbar {
-            position: relative;
-            top: 20;
-            height: 100px;
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
         }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("Images/background.jpeg"); /* Ganti dengan path gambar Anda */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Background tetap pada posisinya saat di-scroll */
+      }
 
-        header {
-            color: rgb(233, 236, 244);
-            text-align: center;
-            padding: 100px 0;
-            margin-bottom: 50px; /* Jarak antara header dan main content */
-        }
+      .navbar {
+        position: relative;
+        height: 100px;
+      }
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-        p
+      header {
+        color: rgb(233, 236, 244);
+        text-align: center;
+        padding: 100px 0;
+        margin-bottom: 50px; /* Jarak antara header dan main content */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-        main {
-            padding-top: 20px;
-            margin-bottom: 50px; /* Jarak antara main content dan footer */
-        }
+      header h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: 'Lobster', cursive;
+        animation: fadeIn 2s ease-in-out;
+      }
 
-        .promo-item{
-            color: white;
-        }
+      header p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        animation: fadeIn 2s ease-in-out;
+        animation-delay: 1s;
+      }
 
-        .promo-item img {
-            height: 200px;
-            object-fit: cover;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
+        to {
+          opacity: 1;
+        }
+      }
 
-        .promo-item p {
-            color: white; /* Mengubah warna tulisan menjadi putih */
-        }
+      main {
+        padding-top: 20px;
+        margin-bottom: 50px; /* Jarak antara main content dan footer */
+      }
 
-        h2 {
-            color: white; /* Mengubah warna tulisan menjadi putih */
-        }
+      .promo-item {
+        color: white;
+        width: 300px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        flex: 1;
+        animation: slideIn 0.5s ease-out;
+      }
 
-        footer {
-            background-color: #292f30;
-            color: #c1c8c8;
-            padding: 30px 0;
-            margin-top: 50px; /* Jarak antara main content dan footer */
-        }
+      .promo-item img {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+      }
 
-        footer h5 {
-            color: #15a68e;
-        }
+      .promo-item img:hover {
+        transform: scale(1.1);
+      }
 
-        footer a {
-            color: #00796b;
-        }
+      .promo-item p {
+        color: white; /* Mengubah warna tulisan menjadi putih */
+      }
 
-        footer a:hover {
-            color: #004d40;
-        }
+      h2 {
+        color: white; /* Mengubah warna tulisan menjadi putih */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-        .footer-social a {
-            margin: 0 10px;
-            color: #0da795;
-            transition: color 0.3s;
-        }
+      footer {
+        background-color: #292f30;
+        color: #c1c8c8;
+        padding: 30px 0;
+        margin-top: 50px; /* Jarak antara main content dan footer */
+      }
 
-        .footer-social a:hover {
-            color: #004d40;
-        }
+      footer h5 {
+        color: #15a68e;
+      }
 
-        h2{
-            color: white;
-        }
+      footer a {
+        color: #00796b;
+      }
 
-        .container {
-            background-color: rgba(191, 6, 6, 0); /* Warna background putih transparan */
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px; /* Jarak antara header dengan kontainer utama */
-            margin-bottom: 30px; /* Jarak antara footer dengan kontainer utama */
-        }
+      footer a:hover {
+        color: #004d40;
+      }
+
+      .footer-social a {
+        margin: 0 10px;
+        color: #0da795;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: #004d40;
+      }
+
+      .container {
+        background-color: rgba(
+          191,
+          6,
+          6,
+          0
+        ); /* Warna background putih transparan */
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px; /* Jarak antara header dengan kontainer utama */
+        margin-bottom: 30px; /* Jarak antara footer dengan kontainer utama */
+      }
+
+      .promo-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Liburan Pulau Komodo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="daftar_paket.html">Paket Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="buku_tamu.html">Buku Tamu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pemesanan.html">Pemesanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Log-in</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Liburan Pulau Komodo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="daftar_paket.html">Paket Wisata</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeri.html">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="buku_tamu.html">Buku Tamu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pemesanan.html">Pemesanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Log-in</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <header>
-        <div class="container">
-            <h1>Selamat Datang di Liburan Pulau Komodo!</h1>
-            <p>Temukan dan pesan paket wisata impian Anda di sini!</p>
-        </div>
+      <div class="container">
+        <h1>Selamat Datang di Liburan Pulau Komodo!</h1>
+        <p>Temukan dan pesan paket wisata impian Anda di sini!</p>
+      </div>
     </header>
 
     <main class="container mt-5">
-        <section class="text-center">
-            <h2>Paket Wisata Terbaru</h2>
-            <div class="row mt-4">
-                <!-- Contoh paket wisata -->
-                <div class="col-md-4 promo-item">
-                    <img src="Images/promo-1.jpeg" class="img-fluid rounded" alt="Promo 1">
-                    <p class="mt-2">Paket Wisata 1 - paket spesial seperti rasa sayang anda kepada pasangan</p>
-                </div>
-                <div class="col-md-4 promo-item">
-                    <img src="Images/promo-2.jpeg" class="img-fluid rounded" alt="Promo 2">
-                    <p class="mt-2">Paket Wisata 2 - paket istimewa seperti tatapan anda kepada pasangan</p>
-                </div>
-                <!-- Tambahkan lebih banyak promo sesuai kebutuhan -->
-            </div>
-        </section>
+      <section class="text-center">
+        <h2>Paket Wisata Terbaru</h2>
+        <div class="promo-container mt-4">
+          <!-- Contoh paket wisata -->
+          <div class="promo-item">
+            <img
+              src="Images/promo-1.jpeg"
+              class="img-fluid rounded"
+              alt="Promo 1"
+            />
+            <p class="mt-2">
+              Paket Wisata 1 - paket spesial seperti rasa sayang anda kepada
+              pasangan
+            </p>
+          </div>
+          <div class="promo-item">
+            <img
+              src="Images/promo-2.jpeg"
+              class="img-fluid rounded"
+              alt="Promo 2"
+            />
+            <p class="mt-2">
+              Paket Wisata 2 - paket istimewa seperti tatapan anda kepada
+              pasangan
+            </p>
+          </div>
+          <div class="promo-item">
+            <img
+              src="Images/komodo ganteng.jpg"
+              class="img-fluid rounded"
+              alt="Promo 3"
+            />
+            <p class="mt-2">
+              Paket Wisata 3 - pengalaman tak terlupakan di Pulau Komodo
+            </p>
+          </div>
+          <!-- Tambahkan lebih banyak promo sesuai kebutuhan -->
+        </div>
+      </section>
     </main>
 
     <footer class="text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Tentang Kami</h5>
-                    <p>Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk destinasi wisata Pulau Komodo dan sekitarnya.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Kontak</h5>
-                    <p>Email: info@pulaukomodo.com</p>
-                    <p>Telepon: +62 812 3456 7890</p>
-                </div>
-                <div class="col-md-4 footer-social">
-                    <h5>Ikuti Kami</h5>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
-            <hr>
-            <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tentang Kami</h5>
+            <p>
+              Liburan Pulau Komodo adalah penyedia paket wisata terkemuka untuk
+              destinasi wisata Pulau Komodo dan sekitarnya.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Kontak</h5>
+            <p>Email: info@pulaukomodo.com</p>
+            <p>Telepon: +62 812 3456 7890</p>
+          </div>
+          <div class="col-md-4 footer-social">
+            <h5>Ikuti Kami</h5>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
         </div>
+        <hr />
+        <p>&copy; 2024 Liburan Pulau Komodo. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
