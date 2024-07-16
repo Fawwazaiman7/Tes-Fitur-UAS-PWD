@@ -7,10 +7,97 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_galeri_admin.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Images/Padar Island, Indonesia.jpeg'); /* Ganti dengan path gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Background tetap pada posisinya saat di-scroll */
+            color: white; /* Mengubah warna teks menjadi putih */
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        main {
+            padding-top: 20px;
+            margin-bottom: 50px; /* Jarak antara main content dan footer */
+        }
+
+        h2 {
+            color: white; /* Mengubah warna tulisan menjadi putih */
+            margin-bottom: 30px;
+        }
+
+        .form-control,
+        .form-control-file {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+
+        .form-control::placeholder {
+            color: #000;
+        }
+
+        .form-control-file {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
         .logout-link {
             padding: 5px 10px;
             border: 2px solid red;
             border-radius: 5px;
+        }
+
+        footer {
+            background-color: rgba(41, 47, 48, 0.8);
+            padding: 20px 0;
+            border-top: 1px solid #e9ecef;
+            color: #c1c8c8;
+        }
+
+        footer h5 {
+            color: #15a68e;
+            margin-bottom: 20px;
+        }
+
+        footer p, footer a {
+            color: #c1c8c8;
+        }
+
+        footer a:hover {
+            color: #004d40;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: #0da795;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #004d40;
+        }
+
+        .container-bg {
+            background-color: rgba(0, 0, 0, 0.5); /* Warna background hitam transparan */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -24,6 +111,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Backend.html">Dashboard</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="daftar_paket_admin.html">Edit Paket Wisata</a>
                     </li>
@@ -40,9 +130,8 @@
             </div>
         </div>
     </nav>
-    
 
-    <main class="container mt-5">
+    <main class="container container-bg">
         <section>
             <h2 class="text-center">Galeri Foto</h2>
             <div class="gallery" id="gallery">
